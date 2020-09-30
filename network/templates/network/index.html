@@ -1,0 +1,24 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <button id="show-button">I absolutely MUST share this thought</button>
+    <button id="hide-button">eh nevermind</button>
+    <div id="newpost">
+        <form id="post-form">
+            <input id="post-body"></input>
+            <input type="submit">
+        </form>
+    </div>
+    <div id="posts"></div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/social.js' %}"></script>
+{% endblock %}
+
+        {% comment %} <form id="post-form" method="POST">
+            {% csrf_token %}
+            {{ postform.as_p }}
+            <input type="submit" value="Post">
+        </form> {% endcomment %}
